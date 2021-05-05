@@ -25,6 +25,10 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
+const NoMatch: FC = () => {
+  return <h1>404 page</h1>;
+};
+
 const RouterComponent: FC = () => {
   const state = useSelector((state) => state);
   const classes = useStyles();
@@ -66,8 +70,11 @@ const RouterComponent: FC = () => {
           <Route path="/me">
             <Me />
           </Route>
-          <Route path="/">
+          <Route path="/add">
             <Add />
+          </Route>
+          <Route path="*">
+            <NoMatch />
           </Route>
         </Switch>
       </Router>
