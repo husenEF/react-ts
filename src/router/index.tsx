@@ -14,6 +14,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Home from "../pages/Home";
 import Me from "../pages/Me";
 import Add from "../pages/Add";
+import { useSelector } from "react-redux";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -23,8 +24,12 @@ const useStyles = makeStyles((theme: Theme) =>
     },
   })
 );
+
 const RouterComponent: FC = () => {
+  const state = useSelector((state) => state);
   const classes = useStyles();
+  console.log("router", state);
+
   return (
     <Container maxWidth="xs">
       <Router>

@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useEffect } from "react";
 import {
   makeStyles,
   GridList,
@@ -11,7 +11,9 @@ import {
   Avatar,
   Typography,
   ListItemText,
+  Button,
 } from "@material-ui/core";
+import { useDispatch, useSelector } from "react-redux";
 
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
@@ -31,10 +33,16 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
 }));
 const Home: FC = () => {
+  const state = useSelector((state) => state);
   const classes = useStyles();
+  const dispatch = useDispatch();
+
   return (
     <div className={classes.root}>
       <Typography>List Contact</Typography>
+      <Button onClick={() => dispatch({ type: "INC" })}>
+        <Typography>Add</Typography>
+      </Button>
       <List className={classes.listContainer}>
         {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((e) => (
           <ListItem>
