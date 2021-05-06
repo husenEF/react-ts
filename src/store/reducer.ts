@@ -1,6 +1,6 @@
 import { RESET, SET_DATA_LOGIN, SET_LOGIN } from "./const"
 
-type State = {
+export type State = {
     readonly counter: number
 }
 const initialState: State = {

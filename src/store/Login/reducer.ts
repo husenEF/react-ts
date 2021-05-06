@@ -1,16 +1,6 @@
 import { iAction } from "../../models/iAction"
+import { ILogin } from "../../models/iAuth"
 
-interface IForm {
-    email: string,
-    password: string
-}
-
-interface ILogin {
-    isLogin: boolean,
-    loading: boolean,
-    form: IForm,
-    error?: string
-}
 
 const initialState: ILogin = {
     isLogin: false,
@@ -23,7 +13,6 @@ const logiReducer = (state = initialState, action: iAction): ILogin => {
     switch (action.type) {
         case action.value:
             return { ...state, isLogin: true }
-
         default:
             return state
 

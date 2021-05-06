@@ -30,9 +30,9 @@ const NoMatch: FC = () => {
 };
 
 const RouterComponent: FC = () => {
-  const state = useSelector((state) => state);
+  const login = useSelector((state) => ({ login: state.login }));
   const classes = useStyles();
-  console.log("router", state);
+  console.log("router", login);
 
   return (
     <Container maxWidth="xs">

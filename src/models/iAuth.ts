@@ -17,3 +17,15 @@ export interface LoginResponse {
 export interface RegisterPayload extends LoginPayload {
     name: string
 }
+
+export interface IForm {
+    email: string,
+    password: string
+}
+
+export interface ILogin {
+    isLogin: boolean,
+    loading: boolean,
+    form: IForm,
+    error?: string
+}
